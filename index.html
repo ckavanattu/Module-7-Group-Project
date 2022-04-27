@@ -4,11 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"> 
-    <title>Module 7 starter</title>
+    <title> Mooview 🐄 </title>
 </head>
 <body>
 
+    <!-- HERO SECTION -->
+
+    <div class = "block hero is-large is-fullheight card">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 has-text-danger-dark">  </h1>
+                <p class="title has-text-white"> Find professional reviews 
+                    of all your favorite movies, <br> specifically by New Yorkers </p>
+                <div class="level-item has-text-centered">
+                    <form id = search-field class="field has-addons is-wide">
+                        <p class="control">
+                            <input id="movie-search" class="input" type="text" placeholder="Find a movie review">
+                        </p>
+                        <p class="control">
+                            <button class="button" type="submit">
+                                Search 
+                            </button>
+                        </p>
+                    </form>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- MOVIE SEARCH RESULT CONTAINER-->
+    <main>
+        <div class="block one-third red-bkg has-text-white">
+            <h2 class="subtitle"> Showing Movies for: <span id="movie-search-term"></span> </h2>
+            <div id="movies-container" class="list-group "></div>
+          </div>
+    </main>
+
+
 <script src="./assets/js/script.js"></script>
+
+<style>
+    .hero{
+        background-image: url("./assets/images/projector.jpg");
+        background-size: cover;
+        
+        height: 100vh;
+    }
+
+    .red-bkg{
+        background-color: #4a0510;
+    }
+
+</style>
 </body>
 </html>
