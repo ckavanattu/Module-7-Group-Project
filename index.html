@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>More Movies, More Movies</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css"> 
-    <title>Module 7 starter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .jumbotron {
+      background-color: orangered;
+      color: #ffffff;
+    }
+    </style>
 <body>
-
-<script src="./assets/js/script.js"></script>
+    <div class="jumbotron text-center">
+        <h1>Movie Search Engine</h1>
+        <p>Search here to find more movie info and reviews</p>
+        <form class="form-inline">
+          <div class="input-group">
+            <input type="email" class="form-control" size="50" placeholder="Search movies by title" required>
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-danger">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <style class = "text-center">
+        .bg-grey {
+          background-color: #f6f6f6;
+        }
+        </style>
+        <style>
+            .jumbotron {
+              background-color: #f4511e;
+              color: #fff;
+              padding: 100px 25px;
+            }
+            
+            .container-fluid {
+              padding: 60px 50px;
+            }
+            </style>
+        
+        <div class="container-fluid text-center">
+          <h2>SEARCH RESULTS</h2>
+          <h4>Return 1st API Results </h4>
+          
+        </div>
+        
+        <div class="container-fluid bg-grey text-center">
+          <h2>Return 2nd Api results NYT reviews</h2>
+          <h4><strong>Return 2nd Api results in dropdown container</h4>
+        </div>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
