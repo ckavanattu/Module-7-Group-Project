@@ -44,11 +44,12 @@ for(i=0; i<movieResults.length; i++) {
 
      var moviePicture = movieResults[i].Poster
      var movieTitle = movieResults[i].Title
+     var movieId = movieResults[i].imdbID
     console.log(movieTitle)
 
     // create a link to contain the movie poster
     var movieBox = document.createElement("a")
-    movieBox.setAttribute("href", "./search.html?title=" +movieTitle)
+    movieBox.setAttribute("href", "./search.html?title=" +movieId)
     movieBox.classList = ("col-md-3")
 
     //movie Poster holding the image and title
