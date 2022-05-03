@@ -14,7 +14,7 @@ console.log(movieId)
 
 var omdbSearch = function(movieId) {
 
-var apiUrl = "http://www.omdbapi.com/?i=" +movieId+ "&plot=full&apikey=c952743e"
+var apiUrl = "https://www.omdbapi.com/?i=" +movieId+ "&plot=full&apikey=c952743e"
 
 fetch(apiUrl)
 .then(function(response){
