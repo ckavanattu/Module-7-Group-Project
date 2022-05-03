@@ -22,7 +22,7 @@ searchFormEl.addEventListener("submit", movieSearch);
 
 
 var searchResults = function(movie) {
-var apiUrl= "http://www.omdbapi.com/?&s=" +movie+ "&type=movie&apikey=c952743e"
+var apiUrl= "https://www.omdbapi.com/?&s=" +movie+ "&type=movie&apikey=c952743e"
 fetch (apiUrl) 
 .then(function(response){
     return response.json();
