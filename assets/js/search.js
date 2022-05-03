@@ -89,7 +89,7 @@ fetch(apiUrlTwo)
         var wikiLink = data.items[0].link
         console.log(wikiLink)
 
-        wikiLinkEl.setAttribute("href", "https://www.rottentomatoes.com/m/" + movieTitle)
+        wikiLinkEl.setAttribute("href", wikiLink)
     })
 
 }

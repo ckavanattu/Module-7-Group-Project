@@ -1,14 +1,21 @@
-#movie-list {
-    background-color: grey
+#moviePoster{
+    background: linear-gradient(white, red);
+    border: 2px solid black;
+    margin: 10px 10px    
 }
+
 
 #movie-list img {
     width: 100%;
     height: 450px
 }
-.jumbotron {
-    background-color: orangered;
+#jumbotron {
+    background-image: url("./images/jumbotron2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
     color: #ffffff;
+       
   }
   #imdbPoster img {
     display: block;

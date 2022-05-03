@@ -1,6 +1,7 @@
 var movieListEl= document.getElementById("movie-list")
 var movieFormEl = document.getElementById("searchName")
 var searchFormEl = document.getElementById("searchForm")
+var searchResultsEl=document.getElementById("searchResults")
 
 
 var movieSearch = function(event) {
@@ -10,7 +11,7 @@ var movieSearch = function(event) {
 
     if(movie){
         searchResults(movie);
-        
+                
     }
     else{
         alert("Issue");
@@ -32,7 +33,7 @@ fetch (apiUrl)
     var movieResults= data.Search
            
     displayMovies(movieResults);
-  
+      
 })
 }
 
@@ -50,7 +51,8 @@ for(i=0; i<movieResults.length; i++) {
     // create a link to contain the movie poster
     var movieBox = document.createElement("a")
     movieBox.setAttribute("href", "./search.html?title=" +movieId)
-    movieBox.classList = ("col-md-3")
+    movieBox.classList = ("col-md-3 pt-5")
+    movieBox.setAttribute("id", "moviePoster")
 
     //movie Poster holding the image and title
     var moviePoster = document.createElement("div")
@@ -67,6 +69,7 @@ for(i=0; i<movieResults.length; i++) {
     movieBox.appendChild(moviePoster)
     movieListEl.appendChild(movieBox)
 
+    
 
 }
 
