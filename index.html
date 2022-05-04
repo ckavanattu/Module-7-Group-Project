@@ -10,26 +10,24 @@
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-    <div class="jumbotron text-center">
-        <h1>Movie Search Engine</h1>
-        <p>Search here to find more movie info and reviews</p>
-    </div>
-    <div>
-        <form class="form-inline" id="searchForm">
-          <input type="text" class="form-input" placeholder="Search movies by title" name="searchName" id="searchName">
-          <button type="submit" class="btn btn-danger">Search</button>
-        </form>
+<body >
+    <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-start" id="jumbotron">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-4 font-weight-bold pt-5">Movie Search Engine</h1>
+            <p class="lead">Search here to find more movie info and reviews</p>
+            <form class="form-inline" id="searchForm">
+                <input type="text" class="form-input" placeholder="Search movies by title" name="searchName" id="searchName">
+                <button type="submit" class="btn btn-danger">Search</button>
+             </form>
+        </div>
 
     </div>
     
-    <section class="container">
-        
-        <div class="container w-auto">
-          <div id = "movie-list" class="row"></div>          
-        </div>
 
-    </section>
+    
+    <div class="column" id="movieBackground">
+        <div class="d-flex flex-wrap" id = "movie-list" ></div>
+    </div>
         
        
     <script src="./assets/js/script.js"></script>

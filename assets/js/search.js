@@ -1,11 +1,13 @@
+// GOOGLE API KEY: AIzaSyDq-lhhsuRY-VdsmpWyFOz9agUMqOaTR7A
 var moviePosterEl = document.getElementById("imdbPoster");
 var movieTitleEl = document.getElementById("imdbTitle");
-var movieRatingEl = document.getElementById("movieRating");
+var movieInfoEl = document.getElementById("movieInfo");
 var moviePlotEl = document.getElementById("moviePlot");
 var imdbLinkEl = document.getElementById("imdbLink");
 var wikiLinkEl = document.getElementById("wikiLink")
-
-
+var movieRatingEl = document.getElementById("movieRating")
+var watchNowEl = document.getElementById("watchNow")
+var movieReviewEl = document.getElementById("movieReviews")
 
 var movieId = document.location.search.split("=")[1];
 console.log(movieId)
@@ -35,7 +37,8 @@ var movieSearch = function(data) {
     var rating = data.Rated
     var genre= data.Genre
     var release = data.Released
-    console.log(poster, plot, title, rating)
+    var reviews = data.Ratings
+    console.dir(reviews)
 
     //variable to generate poster image
     var posterImage = document.createElement("img");
@@ -61,35 +64,81 @@ var movieSearch = function(data) {
     movieRelease.innerText = "Released: " + release
     
     //append everything
-    movieRatingEl.appendChild(movieRating)
-    movieRatingEl.appendChild(movieGenre)
-    movieRatingEl.appendChild(movieRelease)
+    movieInfoEl.appendChild(movieRating)
+    movieInfoEl.appendChild(movieGenre)
+    movieInfoEl.appendChild(movieRelease)
 
     // create link to IMDB page
     imdbLinkEl.setAttribute("href", "https://www.imdb.com/title/" +movieId )
 
-
-
-    googleApi(title);
+    movieReviews(reviews);
 
 }
 
 omdbSearch(movieId);
 
+var movieReviews = function(review){
 
-var googleApi = function(movieTitle) {
+for (i=0; i<review.length; i++) {
+    var reviewSource = review[i].Source
+    var reviewValue = review[i].Value
+    console.log(reviewSource)
+    console.log(reviewValue)
 
-var apiUrlTwo = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDq-lhhsuRY-VdsmpWyFOz9agUMqOaTR7A&cx=7d2740d85140c5cf1&q=movie" + movieTitle 
+    var reviewSourceEl=  document.createElement("h5")
+    reviewSourceEl.innerText = reviewSource
 
-fetch(apiUrlTwo)
+    var reviewValueEl = document.createElement("p")
+    reviewValueEl.innerText = reviewValue 
+
+    movieRatingEl.appendChild(reviewSourceEl)
+    movieRatingEl.appendChild(reviewValueEl)
+}
+
+var streamApi = function(movieId) {
+    
+    
+    var apiUrlThree =  "https://api.themoviedb.org/3/movie/" +movieId+ "/watch/providers?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US"
+
+
+    fetch(apiUrlThree)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        var wikiLink = data.items[0].link
-        console.log(wikiLink)
+        var usStream = data.results.US.link
+        console.dir(usStream)
+        watchNowEl.setAttribute("href", usStream)
+        
+    }) 
+}
 
-        wikiLinkEl.setAttribute("href", "https://www.rottentomatoes.com/m/" + movieTitle)
+var movieReview = function(){
+    var apiUrlFour = "https://api.themoviedb.org/3/movie/" +movieId+ "/reviews?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US"
+
+    fetch(apiUrlFour)
+    .then(function(response){
+        return response.json();        
     })
+    .then(function(data){
+        console.dir(data.results)
+
+        var reviewResults = data.results
+
+        for (i=0; i<reviewResults.length; i++) {
+            var reviewAuthor = reviewResults[i].author
+            var reviewLink = reviewResults[i].url
+
+            var reviewLinkEl= document.createElement("a")
+            reviewLinkEl.setAttribute("href", reviewLink)
+            reviewLinkEl.innerHTML = "Review By: " +reviewAuthor
+
+            movieReviewEl.appendChild(reviewLinkEl)
+        }
+    })
+}
+
+streamApi(movieId);
+movieReview(movieId);
 
 }
