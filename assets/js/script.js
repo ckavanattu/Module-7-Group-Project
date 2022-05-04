@@ -63,6 +63,7 @@ for(i=0; i<movieResults.length; i++) {
     //movie title
     var posterTitle = document.createElement("h5")
     posterTitle.innerText = movieTitle
+    // posterTitle.classList = ("p-2 border-top border-dark")
     
     moviePoster.appendChild(movieImage)
     moviePoster.appendChild(posterTitle)
@@ -74,11 +75,6 @@ for(i=0; i<movieResults.length; i++) {
 }
 
 }
-
-
-// ISSUES TO WORK ON
-// CHECK IF movieSearch COMES BACK WITH IMAGE
-// CHECK WHY movieForm DOESNT WORK WHEN WE GO BACK FROM SECOND HTML
 
 
 
