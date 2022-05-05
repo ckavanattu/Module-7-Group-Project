@@ -9,32 +9,41 @@
     <title>Search Results</title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" id="jumbotron">
+    <div class="jumbotron-fluid d-flex justify-content-center align-items-center" id="jumbotron">
         <div class="d-flex flex-column justify-content-center">
         <h1>Movie Details Below!</h1>
         <a type="click" class="btn btn-danger" href="./index.html">Return To Previous Page</a>
         </div>
     </div>
-    <main class="column" id="mainBody">
-        <div class="row d-flex">
-            <div class="col-12 col-md-4 d-flex" id="imdbPoster"></div>
+    <main class="container-fluid" id="mainBody">
+        <div class="d-flex row">
+            <div class="col-12 col-md-4" id="imdbPoster"></div>
             <div class="col-12 col-md-8 d-flex flex-column" id="movieDetails">
-
-                <h2 id="imdbTitle"></h2>
-                <div class="d-flex flex-row">
-                    <a type="click" class="btn btn-danger mr-4" id="watchNow"> Watch Now!</a>
+            
+            
+            <h2 id="imdbTitle"></h2>
+            <div class="d-flex ">
+                    <a type="click" class="btn btn-danger" id="watchNow"> Watch Now!</a>
                     <a type="click" class="btn btn-danger ml-4" id="imdbLink">View on IMDB</a>
-                </div>
+                    <p id="stream-error">
+            </div>
                 
                 <ul id="movieInfo"></ul>
                 <p id="moviePlot"></p>
-                <div id="movieRating">
-                    <h3> Movie Ratings </h3>
 
-                </div>
-                <div id="movieReviews" class="d-flex flex-column align-items-start">
-                    <h3> Read Movie Reviews</h3>                    
-                </div>
+                <div class="d-flex flex-row container-fluid justify-content-between">
+                    <div id="movieCast">
+                        <h3>Cast</h3>
+                        <div class="d-flex flex-column" id="cast-list"></div>
+
+                    </div>
+                    <div>
+                        <h3>Watch The Trailer</h3> 
+                        <div id="trailer" class="d-flex flex-row justify-content-start">
+                                    
+                        </div>
+                    </div>
+            </div>                
             </div>
         </div>
     </main>
