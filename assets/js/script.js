@@ -67,12 +67,12 @@ var displayMovies = function (movieResults, movie) {
                 // create a link to contain the movie poster
                 var movieBox = document.createElement("a")
                 movieBox.setAttribute("href", "./search.html?title=" + movieId)
-                movieBox.classList = ("col-md-3 pt-5")
+                movieBox.classList = ("col-md-3 pt-2")
                 movieBox.setAttribute("id", "moviePoster")
 
                 //movie Poster holding the image and title
                 var moviePoster = document.createElement("div")
-                moviePoster.classList = ("well text-center")
+                moviePoster.classList = ("well text-center poster-div")
                 //movie image
                 var movieImage = document.createElement("img");
                 movieImage.setAttribute("src", moviePicture);

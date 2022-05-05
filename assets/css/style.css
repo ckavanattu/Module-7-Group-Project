@@ -1,44 +1,78 @@
+h1{
+  padding: 50px;
+}
+
+.search-bar{
+  text-align: center!important;
+  padding-top: 3rem!important;
+  padding-bottom: 3rem!important;
+  padding-right: 1.5rem!important;
+  padding-left: 1.5rem!important;
+  
+}
 
 #moviePoster{
-  background: linear-gradient(#717171, #91102A);
-  border: 2px solid black;
-  margin: 10px 0px    
+  background-color: white 80%;
+  /*border: 2px solid black;*/
+  margin: 40px;
+  /*color: rgba(94,1,19,1); */
+  color: white;   
+  
 }
 
+#error{
+  color:white;
+  text-align: center;
+}
 
 #movie-list img{
-  width: 275px;
-  height: 350px
+  width: 40vh;
+  height: 60vh;
+  object-fit: cover;
 }
 
+.poster-div{
+  padding: 0px;
+}
+
+body{
+  background: rgb(166,123,116);
+  background: linear-gradient(90deg, rgba(166,123,116,1) 5%, rgba(94,1,19,1) 85%);
+}
 
 #jumbotron {
   background-image: url("./images/jumbotron2.JPG");
   background-size: cover;
-  height: 50vh;
+  height: 70vh;
   color: #ffffff;
+  
      
 }
 #movieBackground {
-  background: linear-gradient(#867D7F, black)
+  padding: 50px 0px;
+  width: 90%;
 }
 
 #movieDetails {
-  background: linear-gradient(#867D7F 80%, black);
-   }
+  background-color: white;
+   
+}
+
+
 #imdbPoster {
-  background: linear-gradient(#867d7f 80%, black);
+  background-color: white;
   
   
 }
 
 #imdbPoster img {
-  /* display: block; */
+   display: block; 
   margin-left: auto;
   margin-right: auto;
   width: 500px;
   height: 780px;
-  padding:25px
+  padding:25px;
+
 }
 
 a:link, a:visited {
@@ -58,10 +92,32 @@ a:hover {
 
 a h5{
     padding-top: 5px;
-    border-top: solid black 2px;
-    margin-top: 3px
+    /*border-top: solid black 2px;*/
+    margin-top: 3px;
+    
 }
 
 #movieDetails {
-    padding: 25px
+    padding: 25px;
+}
+
+#watchNow {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+#imdbLink {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+#moviePlot{
+  margin-bottom: 40px;
+}
+
+#mainBody{
+  padding-top:50px;
+  background-color: white;
 }

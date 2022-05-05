@@ -117,7 +117,7 @@ var movieCast = function(movieId) {
             var castActor = data.cast[i].name
             var castCharactor = data.cast[i].character
             
-            var castInfoEl = document.createElement("h5")
+            var castInfoEl = document.createElement("h6")
             castInfoEl.innerText = castActor + " as " + castCharactor
 
             castList.appendChild(castInfoEl)
