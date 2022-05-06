@@ -44,13 +44,7 @@ body{
   background-image: url("./images/jumbotron2.JPG");
   background-size: cover;
   height: 100vh;
-  color: #ffffff;
-}
-
-#jumbotron-mini {
-  background-image: url("./images/jumbotron2.JPG");
-  background-size: cover;
-  height: 30vh;
+  width: 100vw;
   color: #ffffff;
 }
 
@@ -96,6 +90,13 @@ a h5{
 
 
 /* SEARCH PAGE */
+#jumbotron-mini {
+  background-image: url("./images/jumbotron2.JPG");
+  background-size: cover;
+  height: 30vh;
+  color: #ffffff;
+}
+
 
 #imdbPoster {
   background-color: white;
