@@ -100,7 +100,7 @@ var streamApi = function(movieId) {
 }
 
 var streamError = function(event){
-    watchNowErrorEl.innerText= "No Streaming Services Found"
+    alert("No Streaming Services Found");
 }
 
 
@@ -124,10 +124,9 @@ var movieCast = function(movieId) {
             
         }
     })
-    .catch(function(error){
-        var castError = document.createElement("h5")
-        castError.innerHTML= "Cast Information Not Found"
-        castList.appendChild(castError)
+    .catch(function(){
+        var castEl = document.getElementById("movieCast");
+        castEl.innerHTML = "";
     })
 }
 
@@ -165,9 +164,8 @@ var videoApi = function(movieId) {
         }    
     }) 
     .catch(function(error){
-        var videoError = document.createElement("h5")
-        videoError.innerHTML= "No Trailer Found"
-        trailerEl.appendChild(videoError)
+        var videoTitle = document.getElementById("trailerTitle");
+        videoTitle.innerHTML= "";
     })
     
 }

@@ -1,11 +1,11 @@
 h1{
-  padding: 50px;
+  padding: 60px;
 }
 
 .search-bar{
   text-align: center!important;
   padding-top: 3rem!important;
-  padding-bottom: 3rem!important;
+  padding-bottom: 15rem!important;
   padding-right: 1.5rem!important;
   padding-left: 1.5rem!important;
   
@@ -43,11 +43,18 @@ body{
 #jumbotron {
   background-image: url("./images/jumbotron2.JPG");
   background-size: cover;
-  height: 70vh;
+  height: 100vh;
   color: #ffffff;
-  
-     
 }
+
+#jumbotron-mini {
+  background-image: url("./images/jumbotron2.JPG");
+  background-size: cover;
+  height: 30vh;
+  color: #ffffff;
+}
+
+
 #movieBackground {
   padding: 50px 0px;
   width: 90%;
@@ -59,21 +66,7 @@ body{
 }
 
 
-#imdbPoster {
-  background-color: white;
-  
-  
-}
 
-#imdbPoster img {
-   display: block; 
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
-  height: 780px;
-  padding:25px;
-
-}
 
 a:link, a:visited {
     text-decoration: none;
@@ -101,16 +94,39 @@ a h5{
     padding: 25px;
 }
 
+
+/* SEARCH PAGE */
+
+#imdbPoster {
+  background-color: white;
+  
+  
+}
+
+#imdbPoster img {
+  display: block; 
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 780px;
+  object-fit: cover;
+  padding:25px;
+
+}
+
 #watchNow {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-right: 20px;
+  color: white;
+  font-style: bold;
 }
 
 #imdbLink {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
+  color: white;
 }
 
 #moviePlot{
@@ -119,5 +135,6 @@ a h5{
 
 #mainBody{
   padding-top:50px;
+  padding-bottom: 200px;
   background-color: white;
 }

@@ -10,10 +10,10 @@ var movieSearch = function (event) {
 
     
     if (movie) {
+        
         searchResults(movie);
-        searchError.innerText=" "
-        movieFormEl.value = " "
-
+        searchError.innerText=" ";
+        movieFormEl.value = " ";
     }
     else {
         searchError.innerText="Please Enter A Movie Name"
@@ -52,7 +52,8 @@ var displayMovies = function (movieResults, movie) {
 
     else{
 
-        searchError.innerText = "Showing Results For "+movie
+        searchError.innerText = "Showing Results For "+movie;
+
 
         for (i = 0; i < movieResults.length; i++) {
 
@@ -87,6 +88,8 @@ var displayMovies = function (movieResults, movie) {
                 movieListEl.appendChild(movieBox)
             }
         }
+
+        document.getElementById("movieBackground").scrollIntoView();
     }
 
 }
