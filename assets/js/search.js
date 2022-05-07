@@ -16,15 +16,20 @@ var movieId = document.location.search.split("=")[1];
 
 var omdbSearch = function(movieId) {
 
-var apiUrl = "https://www.omdbapi.com/?i=" +movieId+ "&plot=full&apikey=c952743e"
+    var apiUrl = "https://www.omdbapi.com/?i=" +movieId+ "&plot=full&apikey=c952743e"
 
-fetch(apiUrl)
-.then(function(response){
-    return response.json();
-})
-.then(function(data){
-     movieSearch(data);
-})
+    fetch(apiUrl)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        //check if user selected upcoming movie, which has a different movie id so we need to convert it to imdb id
+         if (typeof data.Title !== 'undefined'){
+            movieSearch(data);
+        } else{
+            upcomingMovie(movieId);
+        }
+    })
 
 }
 
@@ -37,7 +42,7 @@ var movieSearch = function(data) {
     var genre= data.Genre
     var release = data.Released
     var reviews = data.Ratings
-    
+
 
     //variable to generate poster image
     var posterImage = document.createElement("img");
@@ -71,7 +76,8 @@ var movieSearch = function(data) {
     imdbLinkEl.setAttribute("href", "https://www.imdb.com/title/" +movieId )
     imdbLinkEl.setAttribute("target", "_blank")
 
-    }
+
+}
 
 omdbSearch(movieId);
 
@@ -143,14 +149,14 @@ var videoApi = function(movieId) {
         return response.json();
     })
     .then(function(data){
-        console.dir(data)
+        //console.dir(data)
         var videos = data.results
         
         for(i=0; i<1; i++) {
-            console.dir(videos)
+           // console.dir(videos)
             
             var trailer = videos[i].type
-            console.dir(trailer)
+            //console.dir(trailer)
 
             if (trailer="Trailer"){
                 var videoContainer=document.createElement("div");
@@ -176,15 +182,33 @@ streamApi(movieId);
 movieCast(movieId);
 videoApi(movieId);
 
-var getUpcomingMovies = function() {
-    var apiUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US&page=1"
-    
-    fetch(apiUrl)
+//IF UPCOMING MOVIE WAS SELECTED
+var upcomingMovie = function(dbmovieId){
+    var apiUrlSeven = "https://api.themoviedb.org/3/movie/" + dbmovieId + "?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US";
+
+    fetch(apiUrlSeven)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-         console.dir(data);
+        var movieId = data.imdb_id;
+        omdbSearch(movieId);
+    })
+}
+
+
+//////////// -------- upcoming movie section ---------   //////////////
+
+//GET UPCOMING MOVIES 
+var getUpcomingMovies = function() {
+    var apiUrlSix = "https://api.themoviedb.org/3/movie/upcoming?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US&page=1"
+    
+    fetch(apiUrlSix)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+         //console.dir(data);
          var upcomingMovieArray = data.results
          displayUpcomingMovies(upcomingMovieArray);
 
@@ -192,12 +216,13 @@ var getUpcomingMovies = function() {
     
 }
 
+//DISPLAY UPCOMING MOVIES BELOW SEARCH
 var displayUpcomingMovies = function (movieArray) {
 
         for (i = 0; i < movieArray.length; i++) {
 
             var upcomingPicture = movieArray[i].poster_path;
-            
+            var upcomingMovieId = movieArray[i].id;
 
             if (upcomingPicture != "N/A"){
 
@@ -208,10 +233,10 @@ var displayUpcomingMovies = function (movieArray) {
                 movieTitle.append(movieArray[i].title); //<h4> "data.title" </h4>
 
                 var moviePoster = document.createElement("img");
-                //moviePoster.classList = ("col-md-3 pt-2");
                 moviePoster.setAttribute("src", "https://image.tmdb.org/t/p/w342"+upcomingPicture); // <img src="poster_path">
 
-                var movieCard = document.createElement("div");
+                var movieCard = document.createElement("a");
+                movieCard.setAttribute("href", "./search.html?title=" + upcomingMovieId)
                 movieCard.classList = ("well text-center movie-card")
                 movieCard.append(movieTitle);
                 movieCard.append(moviePoster);

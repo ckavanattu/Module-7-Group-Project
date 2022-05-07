@@ -27,7 +27,7 @@ var displayUpcomingMovies = function (movieArray) {
         for (i = 0; i < movieArray.length; i++) {
 
             var upcomingPicture = movieArray[i].poster_path;
-            
+            var upcomingMovieId = movieArray[i].id;
 
             if (upcomingPicture != "N/A"){
 
@@ -41,7 +41,8 @@ var displayUpcomingMovies = function (movieArray) {
                 //moviePoster.classList = ("col-md-3 pt-2");
                 moviePoster.setAttribute("src", "https://image.tmdb.org/t/p/w342"+upcomingPicture); // <img src="poster_path">
 
-                var movieCard = document.createElement("div");
+                var movieCard = document.createElement("a");
+                movieCard.setAttribute("href", "./search.html?title=" + upcomingMovieId)
                 movieCard.classList = ("well text-center movie-card")
                 movieCard.append(movieTitle);
                 movieCard.append(moviePoster);
@@ -118,7 +119,8 @@ var displayMovies = function (movieResults, movie) {
 
                 var movieTitle = movieResults[i].Title
                 var movieId = movieResults[i].imdbID
-                
+                console.log(movieId);
+
                 // create a link to contain the movie poster
                 var movieBox = document.createElement("a")
                 movieBox.setAttribute("href", "./search.html?title=" + movieId)

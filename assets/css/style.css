@@ -164,9 +164,18 @@ h2{
 
 .movie-card{
   flex: 0 0 400px;
+  padding: 20px;
+}
+
+.movie-card:hover{
+  box-shadow: 0px 8px 30px white;
+}
+
+
+#upcomingMovies{
   padding-top: 50px;
 }
 
-#upcomingMovies{
+#upcomingList{
   padding-top: 50px;
 }
