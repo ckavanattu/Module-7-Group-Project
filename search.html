@@ -9,25 +9,32 @@
     <title>Search Results</title>
 </head>
 <body>
+    <!-- Top Bar -->
     <div class="jumbotron-fluid d-flex justify-content-center align-items-center" id="jumbotron-mini">
         <div class="d-flex flex-column justify-content-center">
-        <h1>Movie Details Below!</h1>
-        <a type="click" class="btn btn-danger" href="./index.html">Return To Previous Page</a>
+            <h1>Movie Details Below!</h1>
+            <a type="click" class="btn btn-danger" href="./index.html">Return To Previous Page</a>
         </div>
     </div>
+
+    <!-- Clicked Movie Section-->
     <main class="container-fluid" id="mainBody">
         <div class="d-flex row">
+            <!--Movie Image on the right-->
             <div class="col-12 col-md-4" id="imdbPoster"></div>
+
+            <!--Movie details on the left-->
             <div class="col-12 col-md-8 d-flex flex-column" id="movieDetails">
-            
-            
-            <h2 id="imdbTitle"></h2>
-            <div class="d-flex">
-                    <a type="click" class="btn btn-danger" id="watchNow"> Watch Now!</a>
-                    <a type="click" class="btn btn-danger" id="imdbLink">View on IMDB</a>
-                    <p id="stream-error">
-            </div>
-                
+                <!-- Movie Title-->
+                <h2 id="imdbTitle"></h2>
+
+                <!--Buttons-->
+                <div class="d-flex">
+                        <a type="click" class="btn btn-danger" id="watchNow"> Watch Now!</a>
+                        <a type="click" class="btn btn-danger" id="imdbLink">View on IMDB</a>
+                        <p id="stream-error">
+                </div>
+                    
                 <ul id="movieInfo"></ul>
                 <p id="moviePlot"></p>
 
@@ -40,13 +47,20 @@
                     <div>
                         <h3 id="trailerTitle">Watch The Trailer</h3> 
                         <div id="trailer" class="d-flex flex-row justify-content-start">
-                                    
+                                        
                         </div>
                     </div>
-            </div>                
+                </div>                
             </div>
         </div>
     </main>
+
+    <section id="upcomingMovies" class="justify-content-center">
+        <h2 class="d-flex "> Upcoming Movies </h2>
+        <!-- SHOW UPCOMING MOVIES HERE-->
+        <div class="container-fluid" id="upcomingList">
+        </div>
+    </section>
     
 <script src="./assets/js/search.js"></script>
 </body>

@@ -13,12 +13,16 @@ h1{
 
 #moviePoster{
   background-color: white 80%;
-  /*border: 2px solid black;*/
+  flex: 0 0 400px;
   margin: 40px;
-  /*color: rgba(94,1,19,1); */
   color: white;   
   
 }
+
+#moviePoster:hover{
+  box-shadow: 0px 8px 30px white;
+}
+
 
 #error{
   color:white;
@@ -56,6 +60,8 @@ body{
 
 #movieDetails {
   background-color: white;
+  padding-left: 30px;
+  padding-top: 30px;
    
 }
 
@@ -73,9 +79,6 @@ a:hover {
     box-shadow: 0px 8px 30px black
 }
 
-#moviePoster:hover{
-    box-shadow: 0px 8px 30px white;
-}
 
 a h5{
     padding-top: 5px;
@@ -100,18 +103,16 @@ a h5{
 
 #imdbPoster {
   background-color: white;
-  
-  
 }
 
 #imdbPoster img {
   display: block; 
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
-  height: 780px;
+  width: 25vw;
+  height: 85vh;
   object-fit: cover;
-  padding:25px;
+  padding:5%;
 
 }
 
@@ -135,7 +136,22 @@ a h5{
 }
 
 #mainBody{
-  padding-top:50px;
-  padding-bottom: 200px;
+  margin-top:50px;
+  padding-top: 30px;
   background-color: white;
+  width: 95%;
+  margin-bottom: 100px;
+}
+
+#moviePlot{
+  width: 80%;
+}
+
+#upcomingMovies{
+  width: 95%;
+  color: white;
+}
+
+h2{
+  justify-content: center;
 }

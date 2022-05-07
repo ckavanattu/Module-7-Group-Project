@@ -76,6 +76,7 @@ var movieSearch = function(data) {
 omdbSearch(movieId);
 
 
+//WATCH BUTTONS
 var streamApi = function(movieId) {
     
     
@@ -103,7 +104,7 @@ var streamError = function(event){
     alert("No Streaming Services Found");
 }
 
-
+//CAST INFO
 var movieCast = function(movieId) {
     var apiUrlFive ="https://api.themoviedb.org/3/movie/" +movieId+ "/credits?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US"
 
@@ -130,6 +131,7 @@ var movieCast = function(movieId) {
     })
 }
 
+//TRAILER
 var videoApi = function(movieId) {
     
     
@@ -173,3 +175,48 @@ var videoApi = function(movieId) {
 streamApi(movieId);
 movieCast(movieId);
 videoApi(movieId);
+
+var getUpcomingMovies = function() {
+    var apiUrl = "https://api.themoviedb.org/3/movie/upcoming?api_key=3fa1f09b9409b474da0058e7029fa615&language=en-US&page=1"
+    
+    fetch(apiUrl)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+         console.dir(data);
+         var upcomingMovieArray = data.results
+         displayUpcomingMovies(upcomingMovieArray);
+
+    })
+    
+}
+
+var displayUpcomingMovies = function (movieArray) {
+
+        for (i = 0; i < movieArray.length; i++) {
+
+            var upcomingPicture = movieArray[i].poster_path;
+            
+
+            if (upcomingPicture != "N/A"){
+
+                var movieTitle = document.createElement("h4");
+                movieTitle.append(movieArray[i].title); //<h4> "data.title" </h4>
+
+                var moviePoster = document.createElement("img");
+                moviePoster.setAttribute("src", upcomingPicture); // <img src="poster_path">
+
+                var movieCard = document.createElement("div");
+                movieCard.append(movieTitle);
+                movieCard.append(moviePoster);
+
+                var upcomingEl = document.getElementById("upcomingList");
+                upcomingEl.append(movieCard);
+            }
+
+
+        }
+    }
+
+getUpcomingMovies();
