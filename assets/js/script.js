@@ -38,7 +38,6 @@ var displayUpcomingMovies = function (movieArray) {
                 movieTitle.append(movieArray[i].title); //<h4> "data.title" </h4>
 
                 var moviePoster = document.createElement("img");
-                //moviePoster.classList = ("col-md-3 pt-2");
                 moviePoster.setAttribute("src", "https://image.tmdb.org/t/p/w342"+upcomingPicture); // <img src="poster_path">
 
                 var movieCard = document.createElement("a");

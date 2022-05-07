@@ -94,15 +94,17 @@ a h5{
 
 /* SEARCH PAGE */
 #jumbotron-mini {
-  background-image: url("./images/jumbotron2.JPG");
+  background-image: url("./images/jumbotron-mini.jpg");
   background-size: cover;
-  height: 30vh;
+  height: 20vh;
   color: #ffffff;
 }
 
 
 #imdbPoster {
   background-color: white;
+  flex: 0 0 400px;
+  /* padding:5%; */
 }
 
 #imdbPoster img {
@@ -113,6 +115,7 @@ a h5{
   height: 85vh;
   object-fit: cover;
   padding:5%;
+  flex: 0 0 400px;
 
 }
 
@@ -183,6 +186,22 @@ h4{
 }
 
 #upcomingList{
+  padding-top: 50px;
+  
+}
+
+/* MOVIE RECOMMENDATIONS SECTION */
+
+h5{
+  color:white;
+}
+
+#recMovies{
+  padding-top: 50px;
+  
+}
+
+#recList{
   padding-top: 50px;
   
 }
