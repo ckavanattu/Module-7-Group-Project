@@ -155,3 +155,18 @@ a h5{
 h2{
   justify-content: center;
 }
+
+/* Upcoming Movies Section */
+
+#movie-list{
+  display: flex;
+}
+
+.movie-card{
+  flex: 0 0 400px;
+  padding-top: 50px;
+}
+
+#upcomingMovies{
+  padding-top: 50px;
+}

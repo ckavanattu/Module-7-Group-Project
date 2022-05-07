@@ -201,13 +201,18 @@ var displayUpcomingMovies = function (movieArray) {
 
             if (upcomingPicture != "N/A"){
 
+                var upcomingTitle = document.getElementById("upcomingTitle");
+                upcomingTitle.innerHTML = "Upcoming Movies You'd Love"
+
                 var movieTitle = document.createElement("h4");
                 movieTitle.append(movieArray[i].title); //<h4> "data.title" </h4>
 
                 var moviePoster = document.createElement("img");
-                moviePoster.setAttribute("src", upcomingPicture); // <img src="poster_path">
+                //moviePoster.classList = ("col-md-3 pt-2");
+                moviePoster.setAttribute("src", "https://image.tmdb.org/t/p/w342"+upcomingPicture); // <img src="poster_path">
 
                 var movieCard = document.createElement("div");
+                movieCard.classList = ("well text-center movie-card")
                 movieCard.append(movieTitle);
                 movieCard.append(moviePoster);
 
