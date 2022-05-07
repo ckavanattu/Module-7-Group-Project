@@ -158,6 +158,10 @@ h2{
 
 /* Upcoming Movies Section */
 
+h4{
+  color:white;
+}
+
 #movie-list{
   display: flex;
 }
@@ -165,6 +169,7 @@ h2{
 .movie-card{
   flex: 0 0 400px;
   padding: 20px;
+  color: white;
 }
 
 .movie-card:hover{
@@ -174,8 +179,10 @@ h2{
 
 #upcomingMovies{
   padding-top: 50px;
+  
 }
 
 #upcomingList{
   padding-top: 50px;
+  
 }
