@@ -11,23 +11,34 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body >
-    <div class="jumbotron d-flex justify-content-center align-items-start" id="jumbotron">
-        <div class="container d-flex flex-column justify-content-center align-items-center">
-            <h1 class="display-4 font-weight-bold pt-5">Filmpire!</h1>
+    
+    <div class="row jumbotron d-flex justify-content-center align-items-center" id="jumbotron">
+        <header>
+            <nav>
+                <h1 class="display-4 font-weight-bold pt-2 text-right">Filmpire</h1>
+            </nav>
+        </header>
+        <div class="search-bar container d-flex flex-column align-items-center">
             <p class="lead">Search here to find more movie info and reviews</p>
             <form class="form-inline" id="searchForm">
                 <input type="text" class="form-input" placeholder="Search movies by title" name="searchName" id="searchName">
                 <button type="submit" class="btn btn-danger">Search</button>
             </form>
-            <h2 id="error"></h2>
+            
         </div>
 
     </div>
     
-
+    <section id="upcomingMovies" class="container-fluid justify-content-center">
+        <h2 class="d-flex " id="upcomingTitle">  </h2>
+        <!-- SHOW UPCOMING MOVIES HERE-->
+        <div class="d-flex flex-wrap justify-content-center" id="upcomingList">
+        </div>
+    </section>
     
     <div class="container-fluid" id="movieBackground">
-        <div class="d-flex flex-wrap" id = "movie-list" ></div>
+        <h2 id="error"></h2>
+        <div class="d-flex flex-wrap justify-content-center" id = "movie-list" ></div>
     </div>
         
        
