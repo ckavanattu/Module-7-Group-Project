@@ -22,4 +22,4 @@
 https://ckavanattu.github.io/Module-7-Group-Project/
 
 ## Sample Image of Website below
-![Sample Website](Image.png)
+![Sample Website](image.PNG)
