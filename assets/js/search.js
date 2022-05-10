@@ -127,7 +127,7 @@ var streamApi = function(movieId) {
 }
 
 var streamError = function(event){
-    watchNowErrorEl.append("No streaming service found!");
+    watchNowErrorEl.innerHTML = "No streaming service found!";
 }
 
 //CAST INFO
