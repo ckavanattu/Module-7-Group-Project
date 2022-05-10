@@ -127,7 +127,6 @@ var streamApi = function(movieId) {
 }
 
 var streamError = function(event){
-    event.preventDefault();
     watchNowErrorEl.innerHTML("No streaming service found!");
 }
 
