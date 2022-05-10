@@ -65,7 +65,9 @@ body{
    
 }
 
-
+#stream-error{
+  color:black;
+}
 
 
 a:link, a:visited {
